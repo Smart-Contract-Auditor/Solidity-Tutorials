@@ -18,3 +18,9 @@ npm install
 ```shell
 npx hardhat test
 ```
+
+### Testing a Specific File
+
+```shell
+npx hardhat test test/{ep-id}/{file}.js
+```
