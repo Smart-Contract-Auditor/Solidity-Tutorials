@@ -25,14 +25,6 @@ contract Variables {
         console.log("Address of the caller: ", sender);
         uint256 value = msg.value;
         console.log("Value sent with the message: ", value);
-        // First four bytes of the calldata, i.e function identifier. bytes4(keccak256("doSomething()")).
-        bytes4 sig = msg.sig;
-        bytes memory bytesEncoded = abi.encode(sig);
-        console.log("Function identifier:");
-        console.logBytes(bytesEncoded);
-        bytes calldata data = msg.data; // Complete calldata.
-        console.log("Complete calldata:");
-        console.logBytes(data);
         address origin = tx.origin; // Can only be an EOA.
         console.log("Address of the original sender: ", origin);
         uint256 gasPrice = tx.gasprice;
@@ -58,9 +50,9 @@ contract Variables {
         uint8 oneMinute = 1 minutes; // 60 seconds
         assert(oneMinute / (oneSecond * 60) == 1);
         uint16 oneHour = 1 hours; // 60 minutes
-        assert(oneHour / (uint16(oneMinute) * 60) == 1);
+        assert(oneHour / (uint16(oneMinute) * 60) == 1); // Cast to uint16 to avoid overflow.
         uint24 oneDay = 1 days; // 24 hours
-        assert(oneDay / (uint24(oneHour) * 24) == 1);
+        assert(oneDay / (uint24(oneHour) * 24) == 1); // Cast to uint24 to avoid overflow.
         uint24 oneWeek = 1 weeks; // 7 days
         assert(oneWeek / (oneDay * 7) == 1);
     }

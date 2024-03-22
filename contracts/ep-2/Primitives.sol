@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+// Credit to: https://solidity-by-example.org/immutable/
 pragma solidity ^0.8.24;
 
 contract Primitives {
@@ -12,7 +13,7 @@ contract Primitives {
         ...
         uint256 ranges from 0 to 2 ** 256 - 1
     */
-    uint8 public u8 = 1; // 00000001
+    uint8 public u8 = 1; // 0000001
     uint256 public u256 = 456;
     uint public u = 123; // uint is an alias for uint256
 
@@ -43,8 +44,8 @@ contract Primitives {
      The term bytes in Solidity represents a dynamic array of bytes. 
      It’s a shorthand for byte[] .
     */
-    bytes1 a = 0xb5; //  [10110101]
-    bytes1 b = 0x56; //  [01010110]
+    bytes1 a = 0xb5; // 181 [10110101]
+    bytes1 b = 0x56; // 86 [01010110]
 
     // Default values
     // Unassigned variables have a default value

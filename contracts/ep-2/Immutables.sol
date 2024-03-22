@@ -5,7 +5,7 @@ pragma solidity ^0.8.24;
 import "hardhat/console.sol";
 
 contract Immutables {
-    // Slightly less gas-efficient than costants.
+    // Slightly less gas-efficient than constants.
     // coding convention to uppercase constant variables
     address public immutable MY_ADDRESS;
     uint256 public immutable MY_UINT;

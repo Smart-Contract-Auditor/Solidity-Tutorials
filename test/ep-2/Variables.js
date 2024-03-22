@@ -10,6 +10,7 @@ describe("Variables", function () {
         expect(address).length(42);
     });
 
+    // These are not actually tests, just used to show the console logs.
     it("Should send ether and print all the console logs from doSomething().", async () => {
         await variablesContract.doSomething({ value: ethers.parseEther("1") });
         expect(true).to.be.true;
